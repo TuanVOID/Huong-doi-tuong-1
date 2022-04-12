@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
+</head>
+<body>
+<canvas id="paper" width="900" , height="400" style="background-color: lightslategrey"></canvas>
+
+<script>
+    class Rectangle {
+        constructor(H,W) {
+            this.height = H;
+            this.weight = W;
+        }
+        getArea(){
+            return this.height*this.weight;
+        }
+        getPerimeter() {
+            return (this.height+this.weight)*2;
+        }
+        drawRectangle(){
+            let c = document.getElementById("paper");
+            let ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.rect(300, 100, this.weight, this.height);
+            ctx.stroke();
+        }
+        writeText(){
+            let c = document.getElementById("paper");
+            let ctx = c.getContext("2d");
+            ctx.font = "20px Arial";
+            ctx.fillText("Area: " + this.getArea() + "  Perimetter: " + this.getPerimeter(),40,380);
+        }
+    }
+
+    let hcn = new Rectangle(200,300);
+    hcn.drawRectangle();
+    hcn.writeText()
+    console.log(hcn);
+    console.log(hcn.getArea())
+    console.log(hcn.getPerimeter())
+
+</script>
+</body>
+</html>

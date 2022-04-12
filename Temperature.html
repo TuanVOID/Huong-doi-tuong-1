@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temp</title>
+</head>
+<body>
+<script>
+    class Temp {
+        constructor(temp) {
+            this.tempc = temp;
+
+        }
+        convertTempK(){
+            return this.tempc-273;
+        }
+        convertTempF(){
+            return this.tempc+32;
+        }
+    }
+
+    let temp = new Temp(25)
+    console.log(temp.convertTempK())
+    console.log(temp.convertTempF())
+</script>
+</body>
+</html>
